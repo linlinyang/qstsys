@@ -1,0 +1,84 @@
+body {
+  background: #eeeeee; }
+
+.clearfix:after {
+  content: '';
+  clear: both; }
+
+.fl {
+  float: left; }
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative; }
+  .form-group .required {
+    color: red; }
+  .form-group .label {
+    font-size: 14px;
+    color: #333;
+    font-weight: bolder; }
+  .form-group .options {
+    padding-left: 24px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+    font-weight: normal; }
+    .form-group .options .option {
+      display: flex;
+      flex-flow: row nowrap;
+      margin-bottom: 6px; }
+      .form-group .options .option.checked {
+        font-size: 12px;
+        color: green;
+        font-weight: bolder; }
+        .form-group .options .option.checked .select {
+          border-color: green;
+          font-size: 12px;
+          color: green;
+          font-weight: bolder; }
+          .form-group .options .option.checked .select .iconfont {
+            display: inline; }
+      .form-group .options .option .num {
+        width: 30px;
+        flex-shrink: 0; }
+      .form-group .options .option .cont {
+        flex-shrink: 1; }
+      .form-group .options .option .select {
+        width: 16px;
+        height: 16px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+        text-align: center;
+        font-size: 12px;
+        color: green;
+        font-weight: bolder; }
+        .form-group .options .option .select .iconfont {
+          vertical-align: middle;
+          display: none; }
+        .form-group .options .option .select.checkbox {
+          border-radius: 3px; }
+        .form-group .options .option .select.radiobox {
+          border-radius: 50%; }
+    .form-group .options .correct {
+      margin-top: 15px;
+      color: red; }
+
+.panel-body {
+  position: relative; }
+  .panel-body .score {
+    top: 35px;
+    right: 35px;
+    position: absolute;
+    width: 120px;
+    height: 96px;
+    background: url("../images/stamp.jpg") no-repeat center top;
+    font-size: 18px;
+    color: #d01715;
+    font-weight: bolder;
+    line-height: 96px;
+    text-align: center;
+    transform: rotateZ(-30deg); }
+    .panel-body .score p {
+      margin-left: -20px; }
+
+/*# sourceMappingURL=score-detail.css.map */

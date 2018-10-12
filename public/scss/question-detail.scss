@@ -1,0 +1,274 @@
+@mixin size(
+	$width: 100%,
+	$height: auto
+){
+	width: $width;
+	height: $height
+}
+
+@mixin backImg(
+	$src,
+	$pos: center top,
+	$size: auto,
+	$repeat: no-repeat
+){
+	background: url($src) $repeat $pos;
+	background-size: $size
+}
+
+@mixin hAlign(
+	$width,
+	$top: 0,
+	$bottom: 0
+){
+	width: $width;
+	margin: $top auto $bottom
+}
+
+@mixin pos(
+	$top: 0,
+	$left: 0,
+	$position: absolute,
+	$right: null,
+	$bottom: null
+){
+	@if $top{
+		top: $top
+	}
+	@if $left{
+		left: $left
+	}
+	@if $right{
+		right: $right
+	}
+	@if $bottom{
+		bottom: $bottom
+	}
+	position: $position
+}
+@mixin fcw(
+	$size: 14px,
+	$color: #333,
+	$weight: normal
+){
+	font-size: $size;
+	color: $color;
+	font-weight: $weight
+}
+
+.panel{
+	.append{
+		float: right;
+		
+	}
+}
+
+.form{
+	padding: 15px 0;
+	position: relative;
+	overflow: hidden;
+	display: block;
+
+	.form-group{
+		margin-bottom: 15px;
+
+		.label{
+			@include fcw(14px,#333,bolder);
+			margin-bottom: 5px;
+			display: block;
+		}
+		.fill{
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 5px;
+
+			&:after{
+				content: '';
+				clear: both;
+			}
+
+			&>.iconfont{
+				@include fcw(22px,#c78741);
+				vertical-align: middle;
+			}
+
+			.checkbox{
+				display: inline-block;
+				vertical-align: middle;
+				@include size(18px,18px);
+				border-radius: 3px;
+				border: 1px solid #42b48d;
+				cursor: pointer;
+				text-align: center;
+				margin-left: 10px;
+
+				.icon{
+					@include fcw(30px,#42b48d);
+					line-height: 14px;
+					opacity: 0;
+					visibility: hidden;
+					transition: all 0.4s ease-in-out;
+				}
+			}
+
+			.option-add{
+				display: inline-block;
+
+				.form-control{
+					width: 90px;
+					@include fcw(12px,#fff);
+					border: 1px solid #41b08a;
+				}
+			}
+
+		}
+
+		.upload{
+			height: 100px;
+			position: relative;
+			border: 1px solid #d6d6d6;
+			display: flex;
+			margin-bottom: 5px;
+	
+			.upload-btn{
+				@include size(100px,100px);
+				box-sizing: border-box;
+				border-radius: 3px;
+				cursor: pointer;
+				position: relative;
+				float: left;
+				border-right: 1px solid #d6d6d6;
+				span{
+					@include pos(null,19px,absolute,null,10px);
+					@include fcw(12px,#666);
+				}
+
+				input{
+					@include size(100%,100%);
+					opacity: 0;
+					cursor: pointer;
+				}
+
+				&:before{
+					content: '';
+					@include pos(35px,25px);
+					@include size(50px,0);
+					margin-top: -0.5px;
+					border-bottom: 1px solid #d6d6d6;
+				}
+				&:after{
+					content: '';
+					@include pos(10px,50px);
+					@include size(0,50px);
+					margin-left: -0.5px;
+					border-left: 1px solid #d6d6d6;
+				}
+			}
+
+			.preview{
+				padding: 10px 0;
+				margin-left: 20px;
+				display: flex;
+				align-items: center;
+				img{
+					@include size(auto,80px);
+					vertical-align: middle;
+				}
+
+				.imgbox{
+					@include size(auto,80px);
+					cursor: pointer;
+					position: relative;
+
+					i{
+						opacity: 0;
+						visibility: hidden;
+						@include fcw(20px,#fff,bold);
+						transition: all 0.6s ease-in-out;
+						@include pos(0,null,absolute,0);
+					}
+					&:hover{
+						i,.shadow{
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+					.shadow{
+						@include pos();
+						@include size(100%,100%);
+						background: rgba(0,0,0,0.6);
+						opacity: 0;
+						visibility: hidden;
+					}
+				}
+			}
+
+			&:after{
+				content: '';
+				clear: both;
+			}
+		}
+
+		.help-block{
+			@include fcw(12px,#666);
+		}
+
+		.form-control{
+			display: inline-block;
+			vertical-align: middle;
+			width: 360px;
+		}
+
+	}
+
+	.options{
+		padding-left: 30px;
+
+		.form-group{
+			padding: 20px;
+			border: 1px solid #fff;
+			border-radius: 3px;
+
+			&:hover{
+				border-color: #41b08a;
+			}
+		}
+	}
+
+	.add-btn{
+		@include size(80px,30px);
+		display: inline-block;
+		overflow: hidden;
+		z-index: 1;
+		position: relative;
+		padding: 0;
+		vertical-align: middle;
+		border: 0;
+
+		input{
+			z-index: 4;
+			opacity: 0;
+			display: block;
+			@include size(100%,100%);
+			@include pos();
+		}
+
+		span{
+			@include pos(0,0,absolute,0,0);
+			margin: auto;
+			z-index: 2;
+			line-height: 30px;
+		}
+
+	}
+
+	.submit{
+		@include size(86px,32px);
+		@include fcw(14px,#fff)
+	}
+
+	.require{
+		color: red;
+	}
+
+}

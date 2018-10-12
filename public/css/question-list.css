@@ -1,0 +1,88 @@
+.panel .append {
+  float: right; }
+
+.panel .search-box {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  .panel .search-box .form-control {
+    float: right; }
+  .panel .search-box .search-btn {
+    margin-left: 5px;
+    padding: 6px 14px; }
+  .panel .search-box:after {
+    clear: both;
+    content: ''; }
+
+.table {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-spacing: 0; }
+  .table th, .table td {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    vertical-align: middle;
+    text-align: center; }
+  .table th {
+    font-size: 12px;
+    color: #444;
+    font-weight: bolder; }
+  .table td {
+    font-size: 12px;
+    color: #444;
+    font-weight: normal; }
+    .table td.special {
+      background: #b7b8b8;
+      color: #fff; }
+  .table tr:hover {
+    background: #f5f5f5; }
+  .table .customer-checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all 0.2s ease-in-out; }
+    .table .customer-checkbox:hover {
+      border-color: #41b08a; }
+    .table .customer-checkbox .iconfont {
+      font-size: 12px;
+      color: #fff;
+      font-weight: normal;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease-in-out; }
+    .table .customer-checkbox.active {
+      background: #41b08a;
+      border-color: #41b08a; }
+      .table .customer-checkbox.active .iconfont {
+        opacity: 1;
+        visibility: visible; }
+  .table .btn {
+    display: inline-block; }
+    .table .btn.btn-primary {
+      background: #3f7cb1;
+      border-color: #3f7cb1; }
+      .table .btn.btn-primary:hover {
+        background: #538ab9;
+        border-color: #3f7cb1; }
+    .table .btn.btn-error {
+      background: #be393f;
+      border-color: #be393f; }
+      .table .btn.btn-error:hover {
+        background: #de242d;
+        border-color: #de242d; }
+    .table .btn.delete-all {
+      display: block;
+      color: #fff;
+      background: #ac8f28;
+      border-color: #ac8f28; }
+      .table .btn.delete-all:hover {
+        background: #c2a335;
+        border-color: #c2a335; }
+
+/*# sourceMappingURL=question-list.css.map */

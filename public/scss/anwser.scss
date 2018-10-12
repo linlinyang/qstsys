@@ -1,0 +1,280 @@
+@mixin size(
+	$width: 100%,
+	$height: auto
+){
+	width: $width;
+	height: $height
+}
+
+@mixin backImg(
+	$src,
+	$pos: center top,
+	$size: auto,
+	$repeat: no-repeat
+){
+	background: url($src) $repeat $pos;
+	background-size: $size
+}
+
+@mixin hAlign(
+	$width,
+	$top: 0,
+	$bottom: 0
+){
+	width: $width;
+	margin: $top auto $bottom
+}
+
+@mixin pos(
+	$top: 0,
+	$left: 0,
+	$position: absolute,
+	$right: null,
+	$bottom: null
+){
+	@if $top{
+		top: $top
+	}
+	@if $left{
+		left: $left
+	}
+	@if $right{
+		right: $right
+	}
+	@if $bottom{
+		bottom: $bottom
+	}
+	position: $position
+}
+@mixin fcw(
+	$size: 14px,
+	$color: #333,
+	$weight: normal
+){
+	font-size: $size;
+	color: $color;
+	font-weight: $weight
+}
+
+body{
+	background: #eeeeee;
+}
+.clearfix:after{
+	content: '';
+	clear: both;
+}
+.fl{
+	float: left;
+}
+
+.main{
+	@include hAlign(80%);
+	background: #fff;
+	max-width: 1200px;
+	position: relative;
+	z-index: 1;
+	padding-top: 50px;
+}
+
+.form-group{
+	padding: 20px 30px;
+	border-bottom: 1px solid #efefef;
+
+	.label{
+		@include fcw(14px,#333,bolder);
+		.special{
+			@include fcw(14px,red,bolder);
+		}
+	}
+	.options{
+		margin-top: 10px;
+		padding-left: 10px;
+		@include fcw(14px,#666);
+
+		.item{
+			padding: 5px 10px;
+			cursor: pointer;
+			overflow: hidden;
+
+			&:hover{
+				color: #000;
+
+				.select-box{
+					border-color: #929292;
+				}
+			}
+
+			.select-box{
+				@include size(14px,14px);
+				border: 1px solid #cecece;
+				float: left;
+				vertical-align: middle;
+				margin-right: 10px;
+				transition: all 0.6s ease-in;
+
+				.iconfont{
+					@include fcw(22px,#e69209,bolder);
+					vertical-align: super;
+					visibility: hidden;
+					margin-top: -6px;
+					display: inline-block;
+					opacity: 0;
+					transition: all 0.6s ease-in;
+				}
+				&.check .iconfont{
+					visibility: visible;
+					opacity: 1;
+				}
+
+				&.checkbox{
+					border-radius: 3px;
+				}
+				&.radiobox{
+					border-radius: 50%;
+				}
+			}
+			
+			.cont{
+				float: left;
+				margin-left: 10px;
+				width: 80%;
+
+				.imgbox img{
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	.btn{
+		outline: none;
+		border: 0;
+		cursor: pointer;
+	}
+
+	.submit{
+		@include size(100%,40px);
+		line-height: 40px;
+		text-align: center;
+		background: #2f8215;
+		@include fcw(16px,#fff,bolder);
+		&:hover{
+			background: #3a961d;
+		}
+	}
+}
+
+.counter{
+	@include size(100%,50px);
+	line-height: 50px;
+	text-align: center;
+	@include pos(0,0,fixed);
+	padding: 0;
+	z-index: 99;
+	@include fcw(16px,#fff,bolder);
+
+	.cont{
+		@include hAlign(80%,0);
+		background: rgba(67,122,54,0.9);
+		transition: all 0.6s ease-in;
+	}
+}
+
+
+.model{
+	@include size(100%,100%);
+	@include pos(0,0,fixed);
+	background: #f6f6f6;
+	z-index: 9999;
+
+	.message{
+		@include hAlign(50%,60px);
+		border-radius: 2px;
+		max-width: 400px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+		.content{
+			text-align: center;
+			padding: 50px 0 20px 0;
+
+			.msg{
+				@include fcw(16px,#000);
+			}
+			.counter-time{
+				margin-top: 20px;
+				@include fcw(12px,#333);
+			}
+			.redirect{
+				display: inline-block;
+				@include fcw(14px,#fff);
+				padding: 4px 10px;
+				cursor: pointer;
+				border-radius: 4px;
+				margin-top: 20px;
+			}
+		}
+
+		.icon{
+			@include fcw(80px,#fff);
+			text-align: center;
+		}
+		&.error{
+			.icon{
+				background: #eeb039;
+				box-shadow: 0 4px 6px #fcce76;
+			}
+			.content .msg{
+				color: #936610;
+			}
+			.redirect{
+				background: #f7a849;
+			}
+		}
+		&.sucess{
+			.icon{
+				background: #5cac2a;
+				box-shadow: 0 4px 6px #71c63b;
+			}
+			.content .msg{
+				color: #3aac21;
+			}
+			.redirect{
+				background: #5cac2a;
+			}
+		}
+	}
+
+}
+
+@media screen and(max-width: 750px) {
+	.main{
+		width: 100%;
+
+		.form-group{
+
+			.options{
+
+				.item{
+					display: flex;
+					align-items: flex-start;
+
+					.cont{
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+	.counter{
+		.cont{
+			width: 100%;
+		}
+	}
+	.model{
+		.message{
+			width: 100%;
+			margin-top: 0;
+			max-width: 100%;
+		}
+	}
+}

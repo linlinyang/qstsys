@@ -1,0 +1,175 @@
+@mixin size(
+	$width: 100%,
+	$height: auto
+){
+	width: $width;
+	height: $height
+}
+
+@mixin backImg(
+	$src,
+	$pos: center top,
+	$size: auto,
+	$repeat: no-repeat
+){
+	background: url($src) $repeat $pos;
+	background-size: $size
+}
+
+@mixin hAlign(
+	$width,
+	$top: 0,
+	$bottom: 0
+){
+	width: $width;
+	margin: $top auto $bottom
+}
+
+@mixin pos(
+	$top: 0,
+	$left: 0,
+	$position: absolute,
+	$right: null,
+	$bottom: null
+){
+	@if $top{
+		top: $top
+	}
+	@if $left{
+		left: $left
+	}
+	@if $right{
+		right: $right
+	}
+	@if $bottom{
+		bottom: $bottom
+	}
+	position: $position
+}
+@mixin fcw(
+	$size: 14px,
+	$color: #333,
+	$weight: normal
+){
+	font-size: $size;
+	color: $color;
+	font-weight: $weight
+}
+
+.panel{
+	.append{
+		float: right;
+	}
+}
+.panel{
+	.search-box{
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 20px;
+
+		.form-control{
+			float: right;
+		}
+		.search-btn{
+			margin-left: 5px;
+			padding: 6px 14px;
+		}
+
+		&:after{
+			clear: both;
+			content: '';
+		}
+	}
+}
+
+.table{
+	@include size(100%,auto);
+	border-collapse: collapse;
+	border: 1px solid rgba(0,0,0,.05);
+	border-spacing: 0;
+
+	th,td{
+		border: 1px solid rgba(0,0,0,.05);
+		padding: 8px;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	th{
+		@include fcw(12px,#444,bolder);
+	}
+	td{
+		@include fcw(12px,#444);
+		&.special{
+			background: #b7b8b8;
+			color: #fff;
+		}
+	}
+	tr:hover{
+		background: #f5f5f5;
+	}
+
+	.customer-checkbox{
+		display: inline-block;
+		@include size(16px,16px);
+		border: 1px solid #d6d6d6;
+		border-radius: 3px;
+		cursor: pointer;
+		vertical-align: middle;
+		transition: all 0.2s ease-in-out;
+
+		&:hover{
+			border-color: #41b08a;
+		}
+
+		.iconfont{
+			@include fcw(12px,#fff);
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.2s ease-in-out;
+		}
+
+		&.active{
+			background: #41b08a;
+			border-color: #41b08a;
+
+			.iconfont{
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	.btn{
+		display: inline-block;
+
+		&.btn-primary{
+			background: #3f7cb1;
+			border-color: #3f7cb1;
+			&:hover{
+				background: #538ab9;
+				border-color: #3f7cb1;
+			}
+		}
+
+		&.btn-error{
+			background: #be393f;
+			border-color: #be393f;
+			&:hover{
+				background: #de242d;
+				border-color: #de242d;
+			}
+		}
+
+		&.delete-all{
+			display: block;
+			color: #fff;
+			background: #ac8f28;
+			border-color: #ac8f28;
+			&:hover{
+				background: #c2a335;
+				border-color: #c2a335;
+			}
+		}
+	}
+}
+

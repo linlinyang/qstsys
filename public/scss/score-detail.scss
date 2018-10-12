@@ -1,0 +1,153 @@
+@mixin size(
+	$width: 100%,
+	$height: auto
+){
+	width: $width;
+	height: $height
+}
+
+@mixin backImg(
+	$src,
+	$pos: center top,
+	$size: auto,
+	$repeat: no-repeat
+){
+	background: url($src) $repeat $pos;
+	background-size: $size
+}
+
+@mixin hAlign(
+	$width,
+	$top: 0,
+	$bottom: 0
+){
+	width: $width;
+	margin: $top auto $bottom
+}
+
+@mixin pos(
+	$top: 0,
+	$left: 0,
+	$position: absolute,
+	$right: null,
+	$bottom: null
+){
+	@if $top{
+		top: $top
+	}
+	@if $left{
+		left: $left
+	}
+	@if $right{
+		right: $right
+	}
+	@if $bottom{
+		bottom: $bottom
+	}
+	position: $position
+}
+@mixin fcw(
+	$size: 14px,
+	$color: #333,
+	$weight: normal
+){
+	font-size: $size;
+	color: $color;
+	font-weight: $weight
+}
+$light-green: green;
+
+body{
+	background: #eeeeee;
+}
+.clearfix:after{
+	content: '';
+	clear: both;
+}
+.fl{
+	float: left;
+}
+
+.form-group{
+	margin-bottom: 15px;
+	position: relative;
+
+	.required{
+		color: red;
+	}
+	.label{
+		@include fcw(14px,#333,bolder);
+	}
+
+	.options{
+		padding-left: 24px;
+		margin-top: 10px;
+		@include fcw(12px,#666);
+
+		.option{
+			display: flex;
+			flex-flow: row nowrap;
+			margin-bottom: 6px;
+			&.checked{
+				@include fcw(12px,$light-green,bolder);
+
+				.select{
+					border-color: $light-green;
+					@include fcw(12px,$light-green,bolder);
+					.iconfont{
+						display: inline;
+					}
+				}
+			}
+
+			.num{
+				width: 30px;
+				flex-shrink: 0;
+			}
+			.cont{
+				flex-shrink: 1;
+			}
+			.select{
+				@include size(16px,16px);
+				border: 1px solid #ccc;
+				margin-right: 10px;
+				text-align: center;
+				@include fcw(12px,green,bolder);
+
+				.iconfont{
+					vertical-align: middle;
+					display: none;
+				}
+				&.checkbox{
+					border-radius: 3px;
+				}
+				&.radiobox{
+					border-radius: 50%;
+				}
+			}
+		}
+
+		.correct{
+			margin-top: 15px;
+			color: red;
+		}
+	}
+}
+
+.panel-body{
+	position: relative;
+
+	.score{
+		@include pos(35px,null,absolute,35px);
+		@include size(120px,96px);
+		background: url('../images/stamp.jpg') no-repeat center top;
+		@include fcw(18px,#d01715,bolder);
+		line-height: 96px;
+		text-align: center;
+		transform: rotateZ(-30deg);
+
+		p{
+			margin-left: -20px;
+		}
+	}
+}

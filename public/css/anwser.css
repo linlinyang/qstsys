@@ -1,0 +1,183 @@
+body {
+  background: #eeeeee; }
+
+.clearfix:after {
+  content: '';
+  clear: both; }
+
+.fl {
+  float: left; }
+
+.main {
+  width: 80%;
+  margin: 0 auto 0;
+  background: #fff;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+  padding-top: 50px; }
+
+.form-group {
+  padding: 20px 30px;
+  border-bottom: 1px solid #efefef; }
+  .form-group .label {
+    font-size: 14px;
+    color: #333;
+    font-weight: bolder; }
+    .form-group .label .special {
+      font-size: 14px;
+      color: red;
+      font-weight: bolder; }
+  .form-group .options {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: normal; }
+    .form-group .options .item {
+      padding: 5px 10px;
+      cursor: pointer;
+      overflow: hidden; }
+      .form-group .options .item:hover {
+        color: #000; }
+        .form-group .options .item:hover .select-box {
+          border-color: #929292; }
+      .form-group .options .item .select-box {
+        width: 14px;
+        height: 14px;
+        border: 1px solid #cecece;
+        float: left;
+        vertical-align: middle;
+        margin-right: 10px;
+        transition: all 0.6s ease-in; }
+        .form-group .options .item .select-box .iconfont {
+          font-size: 22px;
+          color: #e69209;
+          font-weight: bolder;
+          vertical-align: super;
+          visibility: hidden;
+          margin-top: -6px;
+          display: inline-block;
+          opacity: 0;
+          transition: all 0.6s ease-in; }
+        .form-group .options .item .select-box.check .iconfont {
+          visibility: visible;
+          opacity: 1; }
+        .form-group .options .item .select-box.checkbox {
+          border-radius: 3px; }
+        .form-group .options .item .select-box.radiobox {
+          border-radius: 50%; }
+      .form-group .options .item .cont {
+        float: left;
+        margin-left: 10px;
+        width: 80%; }
+        .form-group .options .item .cont .imgbox img {
+          max-width: 100%; }
+  .form-group .btn {
+    outline: none;
+    border: 0;
+    cursor: pointer; }
+  .form-group .submit {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #2f8215;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bolder; }
+    .form-group .submit:hover {
+      background: #3a961d; }
+
+.counter {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding: 0;
+  z-index: 99;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bolder; }
+  .counter .cont {
+    width: 80%;
+    margin: 0 auto 0;
+    background: rgba(67, 122, 54, 0.9);
+    transition: all 0.6s ease-in; }
+
+.model {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: #f6f6f6;
+  z-index: 9999; }
+  .model .message {
+    width: 50%;
+    margin: 60px auto 0;
+    border-radius: 2px;
+    max-width: 400px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+    .model .message .content {
+      text-align: center;
+      padding: 50px 0 20px 0; }
+      .model .message .content .msg {
+        font-size: 16px;
+        color: #000;
+        font-weight: normal; }
+      .model .message .content .counter-time {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #333;
+        font-weight: normal; }
+      .model .message .content .redirect {
+        display: inline-block;
+        font-size: 14px;
+        color: #fff;
+        font-weight: normal;
+        padding: 4px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-top: 20px; }
+    .model .message .icon {
+      font-size: 80px;
+      color: #fff;
+      font-weight: normal;
+      text-align: center; }
+    .model .message.error .icon {
+      background: #eeb039;
+      box-shadow: 0 4px 6px #fcce76; }
+    .model .message.error .content .msg {
+      color: #936610; }
+    .model .message.error .redirect {
+      background: #f7a849; }
+    .model .message.sucess .icon {
+      background: #5cac2a;
+      box-shadow: 0 4px 6px #71c63b; }
+    .model .message.sucess .content .msg {
+      color: #3aac21; }
+    .model .message.sucess .redirect {
+      background: #5cac2a; }
+
+@media screen and (max-width: 750px) {
+  .main {
+    width: 100%; }
+    .main .form-group .options .item {
+      display: flex;
+      align-items: flex-start; }
+      .main .form-group .options .item .cont {
+        width: auto; }
+
+  .counter .cont {
+    width: 100%; }
+
+  .model .message {
+    width: 100%;
+    margin-top: 0;
+    max-width: 100%; } }
+
+/*# sourceMappingURL=anwser.css.map */

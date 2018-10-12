@@ -1,0 +1,192 @@
+.panel .append {
+  float: right; }
+
+.form {
+  padding: 15px 0;
+  position: relative;
+  overflow: hidden;
+  display: block; }
+  .form .form-group {
+    margin-bottom: 15px; }
+    .form .form-group .label {
+      font-size: 14px;
+      color: #333;
+      font-weight: bolder;
+      margin-bottom: 5px;
+      display: block; }
+    .form .form-group .fill {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 5px; }
+      .form .form-group .fill:after {
+        content: '';
+        clear: both; }
+      .form .form-group .fill > .iconfont {
+        font-size: 22px;
+        color: #c78741;
+        font-weight: normal;
+        vertical-align: middle; }
+      .form .form-group .fill .checkbox {
+        display: inline-block;
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        border: 1px solid #42b48d;
+        cursor: pointer;
+        text-align: center;
+        margin-left: 10px; }
+        .form .form-group .fill .checkbox .icon {
+          font-size: 30px;
+          color: #42b48d;
+          font-weight: normal;
+          line-height: 14px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.4s ease-in-out; }
+      .form .form-group .fill .option-add {
+        display: inline-block; }
+        .form .form-group .fill .option-add .form-control {
+          width: 90px;
+          font-size: 12px;
+          color: #fff;
+          font-weight: normal;
+          border: 1px solid #41b08a; }
+    .form .form-group .upload {
+      height: 100px;
+      position: relative;
+      border: 1px solid #d6d6d6;
+      display: flex;
+      margin-bottom: 5px; }
+      .form .form-group .upload .upload-btn {
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+        float: left;
+        border-right: 1px solid #d6d6d6; }
+        .form .form-group .upload .upload-btn span {
+          left: 19px;
+          bottom: 10px;
+          position: absolute;
+          font-size: 12px;
+          color: #666;
+          font-weight: normal; }
+        .form .form-group .upload .upload-btn input {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          cursor: pointer; }
+        .form .form-group .upload .upload-btn:before {
+          content: '';
+          top: 35px;
+          left: 25px;
+          position: absolute;
+          width: 50px;
+          height: 0;
+          margin-top: -0.5px;
+          border-bottom: 1px solid #d6d6d6; }
+        .form .form-group .upload .upload-btn:after {
+          content: '';
+          top: 10px;
+          left: 50px;
+          position: absolute;
+          width: 0;
+          height: 50px;
+          margin-left: -0.5px;
+          border-left: 1px solid #d6d6d6; }
+      .form .form-group .upload .preview {
+        padding: 10px 0;
+        margin-left: 20px;
+        display: flex;
+        align-items: center; }
+        .form .form-group .upload .preview img {
+          width: auto;
+          height: 80px;
+          vertical-align: middle; }
+        .form .form-group .upload .preview .imgbox {
+          width: auto;
+          height: 80px;
+          cursor: pointer;
+          position: relative; }
+          .form .form-group .upload .preview .imgbox i {
+            opacity: 0;
+            visibility: hidden;
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            transition: all 0.6s ease-in-out;
+            top: 0;
+            right: 0;
+            position: absolute; }
+          .form .form-group .upload .preview .imgbox:hover i, .form .form-group .upload .preview .imgbox:hover .shadow {
+            opacity: 1;
+            visibility: visible; }
+          .form .form-group .upload .preview .imgbox .shadow {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            visibility: hidden; }
+      .form .form-group .upload:after {
+        content: '';
+        clear: both; }
+    .form .form-group .help-block {
+      font-size: 12px;
+      color: #666;
+      font-weight: normal; }
+    .form .form-group .form-control {
+      display: inline-block;
+      vertical-align: middle;
+      width: 360px; }
+  .form .options {
+    padding-left: 30px; }
+    .form .options .form-group {
+      padding: 20px;
+      border: 1px solid #fff;
+      border-radius: 3px; }
+      .form .options .form-group:hover {
+        border-color: #41b08a; }
+  .form .add-btn {
+    width: 80px;
+    height: 30px;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    padding: 0;
+    vertical-align: middle;
+    border: 0; }
+    .form .add-btn input {
+      z-index: 4;
+      opacity: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute; }
+    .form .add-btn span {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      margin: auto;
+      z-index: 2;
+      line-height: 30px; }
+  .form .submit {
+    width: 86px;
+    height: 32px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal; }
+  .form .require {
+    color: red; }
+
+/*# sourceMappingURL=question-detail.css.map */

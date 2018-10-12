@@ -1,0 +1,245 @@
+@mixin size(
+	$width: 100%,
+	$height: auto
+){
+	width: $width;
+	height: $height
+}
+
+@mixin backImg(
+	$src,
+	$pos: center top,
+	$size: auto,
+	$repeat: no-repeat
+){
+	background: url($src) $repeat $pos;
+	background-size: $size
+}
+
+@mixin hAlign(
+	$width,
+	$top: 0,
+	$bottom: 0
+){
+	width: $width;
+	margin: $top auto $bottom
+}
+
+@mixin pos(
+	$top: 0,
+	$left: 0,
+	$position: absolute,
+	$right: null,
+	$bottom: null
+){
+	@if $top{
+		top: $top
+	}
+	@if $left{
+		left: $left
+	}
+	@if $right{
+		right: $right
+	}
+	@if $bottom{
+		bottom: $bottom
+	}
+	position: $position
+}
+@mixin fcw(
+	$size: 14px,
+	$color: #333,
+	$weight: normal
+){
+	font-size: $size;
+	color: $color;
+	font-weight: $weight
+}
+
+html{
+	@include size(100%,100%);
+}
+body{
+	@extend html;
+	background: #f6f6f6;
+}
+input,textarea,button{
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.clear:after{
+	clear: both;
+	content: '';
+}
+.icon,.icon i{
+	font-style: normal;
+}
+
+.model{
+	@include size(100%,100%);
+	@include pos(0,0,fixed);
+	background: #f6f6f6;
+	z-index: 9999;
+
+	.login{
+		@include hAlign(400px,60px);
+		border-radius: 2px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+		.login-header{
+			padding: 30px 0;
+			background: #2a94db;
+
+			.bg-title{
+				position: relative;
+				overflow: hidden;
+				text-align: center;
+				height: 24px;
+				line-height: 24px;
+				@include fcw(20px,#fff,bolder);
+
+				.logo{
+					@include size(24px,24px);
+					display: inline-block;
+					position: relative;
+					overflow: hidden;
+					@extend .clear;
+					margin-right: 7px;
+
+					span{
+						display: block;
+						float: left;
+						width: 8px;
+						height: 8px;
+						background: rgba(255,255,255,0.2);
+					}
+					.px-logo-{
+						&2,&6,&8{
+							background: rgba(255,255,255,0.8);
+						}
+					}
+				}
+				>span{
+					vertical-align: top;
+				}
+			}
+
+			.sm-title{
+				text-align: center;
+				@include fcw(14px,#fff);
+				margin-top: 10px;
+			}
+		}
+
+		.login-content{
+			display: block;
+			background: #fff;
+			padding: 30px;
+
+			.form-group{
+				margin-bottom: 15px;
+				position: relative;
+				display: block;
+				overflow: hidden;
+
+				.icon{
+					@include fcw(20px,rgb(129,138,145));
+					@include size(36px,22px);
+					@include pos(9px,1px);
+					line-height: 22px;
+					text-align: center;
+					border-right: 1px solid rgba(0,0,0,0.14);
+				}
+
+				.form-control{
+					display: block;
+					@include size(100%,40px);
+					box-sizing: border-box;
+					padding: 8px 18px 8px 50px;
+					border-radius: 3px;
+					line-height: 40px;
+					border: 1px solid #d6d6d6;
+					background: #fff;
+					margin: 0;
+					outline: none;
+					@include fcw(#333,14px);
+
+					&:focus{
+						border-color: #2a94db;
+					}
+				}
+
+			}
+			.submit{
+				box-sizing: border-box;
+				@include size(100%,40px);
+				line-height: 40px;
+				display: block;
+				text-align: center;
+				color: #fff;
+				background: #2a94db;
+				outline: none;
+				border: 0;
+				cursor: pointer;
+				border-radius: 3px;
+				border: 1px solid #2183c5;
+
+				&:focus,&:hover{
+					color: #fff;
+				    border-color: #207ebc #207ebc #13496e;
+				    background: #248cd2;
+				}
+			}
+
+		}
+
+		.login-footer{
+			background: #f7f7f7;
+			padding: 26px 30px;
+			@include fcw(14px,#444);
+		}
+	}
+
+	.message{
+		@extend .login;
+		.icon{
+			box-shadow: 0 4px 6px #fcce76;
+		}
+
+		.content{
+			text-align: center;
+			padding: 50px 0 20px 0;
+
+			.msg{
+				@include fcw(16px,#000);
+			}
+			.counter{
+				margin-top: 20px;
+				@include fcw(12px,#333);
+			}
+			.redirect{
+				display: inline-block;
+				background: #f7a849;
+				@include fcw(14px,#fff);
+				padding: 4px 10px;
+				cursor: pointer;
+				border-radius: 4px;
+				margin-top: 20px;
+			}
+		}
+	}
+
+	.error{
+		.icon{
+			@include fcw(80px,#fff);
+			text-align: center;
+			background: #eeb039;
+		}
+		.content{
+			.msg{
+				color: #936610;
+			}
+		}
+	}
+}
