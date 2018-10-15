@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','web\anwser@guest');
+Route::get('/','web\Anwser@guest');
 
 Route::get('/login',function(){
 	return view('login/index');
