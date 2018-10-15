@@ -16,33 +16,33 @@ Route::get('/','web\Anwser@guest');
 Route::get('/login',function(){
 	return view('login/index');
 });
-Route::post('/login','web\login@login');
+Route::post('/login','web\Login@login');
 
 Route::middleware('login')->group(function(){
 
-	Route::get('/home/{name?}','web\home@doIndex');
+	Route::get('/home/{name?}','web\Home@doIndex');
 
-	Route::get('/score/{name?}','web\score@index');
+	Route::get('/score/{name?}','web\Score@index');
 
-	Route::get('/setting','web\setting@index');
-	Route::post('/setting/count','web\setting@postCount');
-	Route::post('/setting/other','web\setting@postOther');
+	Route::get('/setting','web\Setting@index');
+	Route::post('/setting/count','web\Setting@postCount');
+	Route::post('/setting/other','web\Setting@postOther');
 
 	Route::get('/source/{name?}',function($name = 'index'){
 		return view('source/index')->with('_name',$name);
 	});
 
-	Route::post('/home/add','web\home@doAdd');
+	Route::post('/home/add','web\Home@doAdd');
 
 });
 
-Route::get('/imgcode','web\anwser@getVerifyCode');
-Route::get('/guest','web\anwser@guest');
-Route::post('/guest','web\anwser@guestLogin');
+Route::get('/imgcode','web\Anwser@getVerifyCode');
+Route::get('/guest','web\Anwser@guest');
+Route::post('/guest','web\Anwser@guestLogin');
 
 Route::middleware('student')->group(function(){
 
-	Route::get('/anwser','web\anwser@index');
-	Route::post('/anwser','web\anwser@post');
+	Route::get('/anwser','web\Anwser@index');
+	Route::post('/anwser','web\Anwser@post');
 
 });
