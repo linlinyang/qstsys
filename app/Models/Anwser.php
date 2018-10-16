@@ -55,6 +55,15 @@ class Anwser extends Authenticatable
     	return $result;
     }
 
+    public static function getGuest(int $guestid){
+        return DB::table('qst_question_guest')
+                    ->where([
+                        ['isover','=',0],
+                        ['id','=',$guestid]
+                    ])
+                    ->first();
+    }
+
     public static function checkLogin($request){
 
     	$questions = self::getRandQuestions();
