@@ -15,7 +15,7 @@
 					<div class="logo">
 						<span class="px-logo-1"></span><span class="px-logo-2"></span><span class="px-logo-3"></span><span class="px-logo-4"></span><span class="px-logo-5"></span><span class="px-logo-6"></span><span class="px-logo-7"></span><span class="px-logo-8"></span><span class="px-logo-9"></span>
 					</div>
-					<span>XXX在线考试</span>
+					<span>华科在线考试</span>
 				</div>
 				<div class="sm-title">
 					<span>公平、公正、公开</span>
