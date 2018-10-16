@@ -9,7 +9,7 @@
 	use Illuminate\Http\Request;
 	use Validator;
 	use Illuminate\Support\Facades\DB;
-	use App\models\Anwser as AswData;
+	use App\Models\Anwser as AswData;
 
 	if(!defined('EXAMTIME')){
 		define('EXAMTIME',3600);

@@ -9,7 +9,7 @@
 	use Illuminate\Http\Request;
 	use Validator;
 	use Illuminate\Support\Facades\DB;
-	use App\models\Setting as MDSetting;
+	use App\Models\Setting as MDSetting;
 
 	class Setting extends BaseController{
 
