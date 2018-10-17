@@ -70,6 +70,7 @@ body{
 
 .main{
 	padding: 0;
+	margin-bottom: 62px;
 
 	.score{
 		@include pos(35px,null,absolute,35px);
@@ -92,10 +93,12 @@ body{
 	text-align: center;
 	@include size(100%,42px);
 	line-height: 42px;
-	background: #207c20;
+	background: rgba(32,142,32,0.9);
 	@include fcw(20px,#fff,bolder);
 	letter-spacing: 3px;
 	cursor: pointer;
+	@include pos(null,0,fixed,null,0);
+	z-index: 99999;
 
 	&:hover{
 		background: #349734;
