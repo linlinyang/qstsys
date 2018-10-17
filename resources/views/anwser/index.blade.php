@@ -14,7 +14,7 @@
 		
 		@foreach ($questions as $key => $qst)
 		<div class="form-group">
-			<label class="label">{{ $key + 1 }}. 测试题目
+			<label class="label">{{ $key + 1 }}. {{$qst['qst']->title}}
 				@if (count(explode(',',$qst['qst']->res)) > 1)
 					<span class="special">（多选)</span>
 				@endif
@@ -96,7 +96,7 @@
 
 			tipsEl.style.display = 'none';*/
 
-			location.replace('{{ url("anwser/result") }}');
+			location.replace('{{ session("success") ? url("anwser/result") : url("/guest") }}');
 		}
 		$(function(){
 
