@@ -96,6 +96,19 @@
 			return captcha();
 		}
 
+		public function result(){
+			$charts = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        	$guestid = session('guestid');
+        	$info = AswData::getResult($guestid,$charts);
+        	if(empty($info)){
+        		return view('score/index')
+        				->with('_name',$name)
+        				->withErrors(['您选择的学生不存在，请重新选择']);
+        	}
+
+			return view('anwser/result',compact('info','charts'));
+		}
+
 	}
 
 

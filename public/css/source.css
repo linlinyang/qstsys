@@ -1,0 +1,11 @@
+body {
+  background: #eeeeee; }
+
+.clearfix:after {
+  content: '';
+  clear: both; }
+
+.fl {
+  float: left; }
+
+/*# sourceMappingURL=source.css.map */

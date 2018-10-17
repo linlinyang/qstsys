@@ -1,0 +1,52 @@
+body {
+  background: #eeeeee; }
+
+.clearfix:after {
+  content: '';
+  clear: both; }
+
+.fl {
+  float: left; }
+
+.main {
+  padding: 0; }
+  .main .score {
+    top: 35px;
+    right: 35px;
+    position: absolute;
+    width: 120px;
+    height: 96px;
+    background: url("../images/stamp.jpg") no-repeat center top;
+    font-size: 18px;
+    color: #d01715;
+    font-weight: bolder;
+    line-height: 96px;
+    text-align: center;
+    transform: rotateZ(-30deg) scale(1.2, 1.2); }
+    .main .score p {
+      margin-left: -20px; }
+
+.save-btn {
+  margin: 10px 0;
+  text-align: center;
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  background: #207c20;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  cursor: pointer; }
+  .save-btn:hover {
+    background: #349734; }
+
+.result {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99; }
+
+/*# sourceMappingURL=result.css.map */

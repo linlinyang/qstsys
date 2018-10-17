@@ -66,7 +66,8 @@ class Anwser extends Authenticatable
 
     public static function checkLogin($request){
 
-    	$questions = self::getRandQuestions();
+        $totalNum = self::getTotalNum();
+    	$questions = self::getRandQuestions($totalNum);
     	$rdQids = [];
     	foreach($questions as $row){
     		$rdQids[] = $row->id;
@@ -103,6 +104,7 @@ class Anwser extends Authenticatable
 
     	$res = '';
     	$score = 0;
+        $average = self::getAverage();
     	foreach($questions as $row){
     		$keyname = $row.'_';
     		$res .= $keyname . '=' . $request->$keyname . '|';
@@ -116,8 +118,71 @@ class Anwser extends Authenticatable
     			'options' => $res,
     			'overtime' => time(),
     			'isover' => 1,
-    			'score' => $score
+    			'score' => $score * $average
     		]);
+    }
+
+    public static function getResult(int $guestid,$charts){
+        $info = DB::table('qst_question_guest')
+                    ->where([
+                        ['isover','=',1],
+                        ['id','=',$guestid]
+                    ])
+                    ->first();
+
+        if(empty($info)){
+            return null;
+        }
+
+        $average = self::getAverage();
+
+        $options = explode('|',$info->options);
+        $result = [];
+        foreach($options as $qst){
+            $qstAndOpts = explode('_=',$qst);
+            $question = DB::table('qst_question_list')
+                        ->where([
+                            ['isdeleted','=',0],
+                            ['id','=',$qstAndOpts[0]]
+                        ])
+                        ->first();
+            $options = DB::table('qst_question_anwser')
+                        ->where([
+                            ['isdeleted','=',0],
+                            ['qid','=',$qstAndOpts[0]]
+                        ])
+                        ->get();
+            $optionids = [];
+            foreach($options as $key => $opt){
+                $optionids[$opt->id] = $charts[$key];
+            }
+            $res = explode(',',$question->res);
+            $correct = [];
+            foreach($res as $cor){
+                $correct[] = $optionids[$cor];
+            }
+            $result[] = [
+                'question' => $question,
+                'options' => $options,
+                'checked' => explode(',',$qstAndOpts[1]),
+                'correct' => $correct,
+                'optionids' => $optionids,
+                'getScore' => $question->res == $qstAndOpts[1] ? $average : 0
+            ];
+        }
+        $info->result = $result;
+        return $info;
+    }
+
+    public static function getTotalNum(){
+        return DB::table('qst_admin_info')
+                    ->select('totalnum')
+                    ->first()
+                    ->totalnum;
+    }
+
+    public static function getAverage(){
+        return 100 / self::getTotalNum();
     }
 
 }

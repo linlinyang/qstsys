@@ -96,7 +96,7 @@
 
 			tipsEl.style.display = 'none';*/
 
-			location.replace('{{ url("guest") }}');
+			location.replace('{{ url("anwser/result") }}');
 		}
 		$(function(){
 

@@ -21,6 +21,7 @@ Route::post('/login','web\Login@login');
 Route::middleware('login')->group(function(){
 
 	Route::get('/home/{name?}','web\Home@doIndex');
+	Route::post('/home/add','web\Home@doAdd');
 
 	Route::get('/score/{name?}','web\Score@index');
 
@@ -28,11 +29,7 @@ Route::middleware('login')->group(function(){
 	Route::post('/setting/count','web\Setting@postCount');
 	Route::post('/setting/other','web\Setting@postOther');
 
-	Route::get('/source/{name?}',function($name = 'index'){
-		return view('source/index')->with('_name',$name);
-	});
-
-	Route::post('/home/add','web\Home@doAdd');
+	Route::get('source/{name?}','web\Source@index');
 
 });
 
@@ -44,5 +41,6 @@ Route::middleware('student')->group(function(){
 
 	Route::get('/anwser','web\Anwser@index');
 	Route::post('/anwser','web\Anwser@post');
+	Route::get('/anwser/result','web\Anwser@result');
 
 });
