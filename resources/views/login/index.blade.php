@@ -34,6 +34,12 @@
 					</div>
 					<input type="password" name="passwd" class="form-control" placeholder="密码" value="{{ old('passwd') }}">
 				</fieldset>
+				<fieldset class="form-group clear">
+					<input type="text" name="checkcode" class="form-control checkcode" placeholder="请输入验证码" value="">
+					<div class="imgcode">
+						<img src="{{ url('imgcode?r='.time()) }}" alt="点击切换验证码">
+					</div>
+				</fieldset>
 
 				{!! csrf_field() !!}
 				<button class="submit" type="submit">登录</button>

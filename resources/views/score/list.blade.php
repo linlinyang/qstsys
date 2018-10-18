@@ -15,18 +15,14 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>考生</th>
-					<th>学号</th>
 					<th>院系</th>
 					<th>分数</th>
-					<th>操作</th>
+					<th>提交时间</th>
 				</tr>
 			</thead>
 			<tbody>
 				@foreach ($lists as $std)
 				<tr>
-					<td>{{$std->uname}}</td>
-					<td>{{$std->schoolnum}}</td>
 					<td>{{$std->department}}</td>
 					<td>
 						@if($std->score)
@@ -36,7 +32,7 @@
 						@endif
 					</td>
 					<td>
-						<a href="{{url('score/detail?gid=').$std->id}}" class="btn btn-primary">详情</a>
+						{{ date("Y-m-d h:i",$std->overtime) }}
 					</td>
 				</tr>
 				@endforeach

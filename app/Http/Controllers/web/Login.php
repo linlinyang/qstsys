@@ -21,9 +21,12 @@ class Login extends BaseController
         return $this->validate($request->all(),[
             'uname' => 'required',
             'passwd' => 'required',
+            'checkcode' => 'required|captcha'
         ], [
             'uname.required' => '请输入账号',
-            'passwd.required' => '请输入密码'
+            'passwd.required' => '请输入密码',
+            'checkcode.required' => '请输入验证码',
+            'checkcode.captcha' => '验证码输入错误，请重新输入'
         ]);
     }
 

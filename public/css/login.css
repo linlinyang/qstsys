@@ -102,6 +102,16 @@ input, textarea, button {
           font-weight: normal; }
           .model .login .login-content .form-group .form-control:focus, .model .message .login-content .form-group .form-control:focus {
             border-color: #2a94db; }
+          .model .login .login-content .form-group .form-control.checkcode, .model .message .login-content .form-group .form-control.checkcode {
+            width: 60%;
+            padding: 8px 18px;
+            float: left; }
+        .model .login .login-content .form-group .imgcode, .model .message .login-content .form-group .imgcode {
+          width: 30%;
+          height: 40px;
+          float: left;
+          margin-left: 10px;
+          cursor: pointer; }
       .model .login .login-content .submit, .model .message .login-content .submit {
         box-sizing: border-box;
         width: 100%;
