@@ -289,9 +289,9 @@ class Home extends BaseController
                 ->get()
                 ->all();
         $insert = [];
-
+        
         foreach($opts as $key => $val){
-            if($items[$key]){
+            if(!empty($items[$key])){
                 $data = [
                     'title' => empty($val['item']) ? null : $val['item'],
                     'thumb' => empty($val['file']) ? null : $this->addFile($val['file'],$key),
