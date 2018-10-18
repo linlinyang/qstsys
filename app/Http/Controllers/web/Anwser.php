@@ -30,7 +30,8 @@
 				return back()
 					->withErrors(['您的试卷已提交或您还未登录您的账号']);
 			}
-			if(time() - $guestInfo->starttime > EXAMTIME + 60){
+			$examtime = AswData::getExamTime();
+			if(time() - $guestInfo->starttime > $examtime + 60){
 				return back()
 					->withErrors(['您的试卷已超时，无法提交']);
 			}
