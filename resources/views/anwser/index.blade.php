@@ -9,7 +9,9 @@
 @section('main')
 
 <div class="main">
-
+	<div class="logo">
+		<img src="{{ url('public/images/logo.png') }}">
+	</div>
 	<form action="./anwser" method="post" class="form" id="myform">
 		
 		@foreach ($questions as $key => $qst)
