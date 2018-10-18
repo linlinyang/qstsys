@@ -29,8 +29,6 @@ Route::middleware('login')->group(function(){
 	Route::post('/setting/count','web\Setting@postCount');
 	Route::post('/setting/other','web\Setting@postOther');
 
-	Route::get('source/{name?}','web\Source@index');
-
 });
 
 Route::get('/imgcode','web\Anwser@getVerifyCode');

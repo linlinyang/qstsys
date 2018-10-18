@@ -181,6 +181,13 @@ class Anwser extends Authenticatable
                     ->totalnum;
     }
 
+    public static function getExamTime(){
+        return DB::table('qst_admin_info')
+                    ->select('examtime')
+                    ->first()
+                    ->examtime;
+    }
+
     public static function getAverage(){
         return 100 / self::getTotalNum();
     }

@@ -124,8 +124,8 @@
 
 		var total = initTotal = sessionStorage.getItem('total_time');
 		if(!total){
-			sessionStorage.setItem('total_time',{{EXAMTIME}});
-			total = initTotal = {{EXAMTIME}};
+			sessionStorage.setItem('total_time',{{$examtime}});
+			total = initTotal = {{$examtime}};
 		}
 
 		$("#myform .item").click(function(){
@@ -151,6 +151,7 @@
 		var timer = setInterval(setTime,1000),
 			minuteData = document.querySelector('.counter .minute').firstChild,
 			secondData = document.querySelector('.counter .seconds').firstChild;
+
 		function setTime(){
 			if(--total <= 0){
 				$(".counter .cont").html('考试结束，请在1分钟内提交试卷，否则答题作废');

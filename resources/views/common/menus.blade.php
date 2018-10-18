@@ -19,9 +19,4 @@
 		<i class="icon-right iconfont"></i>
 	</a>
 
-	<a href="{{ url('source') }}" class="item {{ $tabIndex === 'source' ? 'active' : '' }}">
-		<i class="icon-zhunbeiliangchan iconfont"></i>
-		<span>资源管理</span>
-		<i class="icon-right iconfont"></i>
-	</a>
 </aside>

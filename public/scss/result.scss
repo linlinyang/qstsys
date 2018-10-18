@@ -90,7 +90,7 @@ body{
 	}
 
 	.score{
-		@include pos(135px,null,absolute,5%);
+		@include pos(235px,null,absolute,5%);
 		@include size(120px,96px);
 		background: url('../images/stamp.jpg') no-repeat center top;
 		@include fcw(18px,#d01715,bolder);

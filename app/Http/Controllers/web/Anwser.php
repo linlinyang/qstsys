@@ -11,18 +11,15 @@
 	use Illuminate\Support\Facades\DB;
 	use App\Models\Anwser as AswData;
 
-	if(!defined('EXAMTIME')){
-		define('EXAMTIME',3600);
-	}
-
 	class Anwser extends BaseController{
 
 		public function index(Request $request){
 			$guestid = session('guestid');
 			$expired = session('expired');
 			$questions = AswData::idToRows($guestid);
+			$examtime = AswData::getExamTime();
 			$charts = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-			return view('anwser/index',compact('questions','charts','expired'));
+			return view('anwser/index',compact('questions','charts','expired','examtime'));
 
 		}
 
