@@ -11,7 +11,20 @@
 @section('main')
 
 <div class="main">
-	
+	<div class="logo">
+		<img src="{{ url('public/images/logo.png') }}">
+	</div>
+	<div class="info">
+		<div class="field">
+			<strong>姓名：</strong>{{ $info->uname }}
+		</div>
+		<div class="field">
+			<strong>学院：</strong>{{ $info->department }}
+		</div>
+		<div class="field">
+			<strong>学号：</strong>{{ $info->schoolnum }}
+		</div>
+	</div>
 	@foreach ($info->result as $key => $qst)
 	<div class="form-group">
 		<label class="label">第{{ $key + 1 }}题：{{ $qst['question']->title }}

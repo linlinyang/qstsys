@@ -72,8 +72,25 @@ body{
 	padding: 0;
 	margin-bottom: 62px;
 
+	.logo{
+		width: 100%;
+
+		img{
+			width: 100%;
+		}
+	}
+
+	.info{
+		padding: 10px 30px;
+		position: relative;
+
+		.field{
+			margin-top: 10px;
+		}
+	}
+
 	.score{
-		@include pos(35px,null,absolute,35px);
+		@include pos(135px,null,absolute,5%);
 		@include size(120px,96px);
 		background: url('../images/stamp.jpg') no-repeat center top;
 		@include fcw(18px,#d01715,bolder);
