@@ -19,8 +19,7 @@ class Home extends BaseController
         $inputs = $request->all();
         switch ($name) {
             case 'index':
-                $search = trim(@$inputs['search']);
-                $search = empty($search) ? '' : $search;
+                $search = empty($inputs['search']) ? '' : $inputs['search'];
                 $page = empty($inputs['page']) ? 1 : $inputs['page'];
                 $lists = Question::list('home',$search,$page);
                 $view = view('home/index',compact('lists','search'));
@@ -289,7 +288,7 @@ class Home extends BaseController
                 ->get()
                 ->all();
         $insert = [];
-        
+
         foreach($opts as $key => $val){
             if(!empty($items[$key])){
                 $data = [
