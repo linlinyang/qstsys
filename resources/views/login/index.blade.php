@@ -90,6 +90,21 @@
 		</script>
 	@endif
 
+<script type="text/javascript">
+	
+	$(function(){
+
+		$(".imgcode").click(function(){
+
+			var url = "{{ url('imgcode?r=') }}" + Math.random();
+			$(this).children('img').attr('src',url);
+
+		});
+
+	});
+
+</script>
+
 @endsection
 
 

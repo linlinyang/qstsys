@@ -69,7 +69,7 @@
 <div class="counter">
 	<div class="cont">
 		考试剩余时间:
-		<span class="minute">30</span>
+		<span class="minute">0</span>
 		分钟
 		<span class="seconds">0</span>
 		秒
@@ -124,8 +124,8 @@
 
 		var total = initTotal = sessionStorage.getItem('total_time');
 		if(!total){
-			sessionStorage.setItem('total_time',{{$examtime}});
-			total = initTotal = {{$examtime}};
+			sessionStorage.setItem('total_time','{{$examtime}}');
+			total = initTotal = '{{$examtime}}';
 		}
 
 		$("#myform .item").click(function(){

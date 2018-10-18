@@ -73,13 +73,13 @@
 		protected function validateLogin(Request $request){
 			return $this->validate($request->all(),[
 	            'uname' => 'required',
-	            'schoolnum' => 'required|alpha_num',
+	            'schoolnum' => 'required|allow_letter',
 	            'department' => 'required',
 	            'checkcode' => 'required|captcha'
 	        ], [
 	            'uname.required' => '请输入姓名',
 	            'schoolnum.required' => '请输入学号',
-	            'schoolnum.alpha_num' => '请输入规范的学号',
+	            'schoolnum.allow_letter' => '请输入规范的学号',
 	            'department.required' => '请输入院系',
 	            'checkcode.required' => '请输入验证码',
 	            'checkcode.captcha' => '验证码输入错误，请重新输入'
