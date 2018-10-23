@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Validator::extend('allow_letter', function ($attribute, $value, $parameters, $validator) {
-            return is_string($value) && preg_match('/^[a-zA-Z1-9\-_]+$/u', $value);
+            return is_string($value) && preg_match('/^[A-Za-z0-9\-_]+$/', $value);
         });
     }
 
