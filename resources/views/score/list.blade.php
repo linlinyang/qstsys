@@ -15,6 +15,7 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th>姓名</th>
 					<th>院系</th>
 					<th>分数</th>
 					<th>提交时间</th>
@@ -23,6 +24,7 @@
 			<tbody>
 				@foreach ($lists as $std)
 				<tr>
+					<td>{{$std->uname}}</td>
 					<td>{{$std->department}}</td>
 					<td>
 						@if($std->score)
