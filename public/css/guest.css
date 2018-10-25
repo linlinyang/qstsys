@@ -6,6 +6,7 @@ body {
   background: #f6f6f6; }
 
 input, textarea, button {
+  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none; }
 
@@ -28,6 +29,7 @@ input, textarea, button {
     width: 460px;
     margin: 60px auto 0;
     border-radius: 2px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
     .model .login .login-header, .model .message .login-header {
       padding: 30px 0;
@@ -85,10 +87,11 @@ input, textarea, button {
           line-height: 22px;
           text-align: center;
           border-right: 1px solid rgba(0, 0, 0, 0.14); }
-        .model .login .login-content .form-group .form-control, .model .message .login-content .form-group .form-control {
+        .model .login .login-content .form-group .form-control, .model .message .login-content .form-group .form-control, .model .login .login-content .form-group .control-box, .model .message .login-content .form-group .control-box {
           display: block;
           width: 100%;
           height: 40px;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           padding: 8px 18px 8px 50px;
           border-radius: 3px;
@@ -97,15 +100,29 @@ input, textarea, button {
           background: #fff;
           margin: 0;
           outline: none;
-          font-size: #333;
-          color: 14px;
+          font-size: 14px;
+          color: #333;
           font-weight: normal; }
-          .model .login .login-content .form-group .form-control:focus, .model .message .login-content .form-group .form-control:focus {
+          .model .login .login-content .form-group .form-control:focus, .model .message .login-content .form-group .form-control:focus, .model .login .login-content .form-group .control-box:focus, .model .message .login-content .form-group .control-box:focus {
             border-color: #2a94db; }
-          .model .login .login-content .form-group .form-control.checkcode, .model .message .login-content .form-group .form-control.checkcode {
+          .model .login .login-content .form-group .form-control.checkcode, .model .message .login-content .form-group .form-control.checkcode, .model .login .login-content .form-group .control-box.checkcode, .model .message .login-content .form-group .control-box.checkcode {
             width: 60%;
             padding: 8px 18px;
             float: left; }
+        .model .login .login-content .form-group .control-box, .model .message .login-content .form-group .control-box {
+          line-height: 24px;
+          font-size: 14px;
+          color: #333;
+          font-weight: normal; }
+          .model .login .login-content .form-group .control-box .radio-box, .model .message .login-content .form-group .control-box .radio-box {
+            margin-right: 10px;
+            vertical-align: middle; }
+            .model .login .login-content .form-group .control-box .radio-box input[type=radio], .model .message .login-content .form-group .control-box .radio-box input[type=radio] {
+              vertical-align: middle;
+              margin-right: 4px;
+              -webkit-appearance: radio;
+              -moz-appearance: radio;
+              appearance: radio; }
         .model .login .login-content .form-group .imgcode, .model .message .login-content .form-group .imgcode {
           width: 30%;
           height: 40px;
@@ -113,6 +130,7 @@ input, textarea, button {
           margin-left: 10px;
           cursor: pointer; }
       .model .login .login-content .submit, .model .message .login-content .submit {
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         width: 100%;
         height: 40px;
@@ -137,6 +155,7 @@ input, textarea, button {
       color: #444;
       font-weight: normal; }
   .model .message .icon {
+    -webkit-box-shadow: 0 4px 6px #fcce76;
     box-shadow: 0 4px 6px #fcce76; }
   .model .message .content {
     text-align: center;
@@ -173,6 +192,7 @@ input, textarea, button {
   .model .login, .model .message {
     width: 100%;
     margin: 0 auto 0;
+    -webkit-box-shadow: none;
     box-shadow: none; }
     .model .login .login-footer, .model .message .login-footer {
       text-align: center; } }

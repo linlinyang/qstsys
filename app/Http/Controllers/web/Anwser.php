@@ -75,14 +75,17 @@
 	            'uname' => 'required',
 	            'schoolnum' => 'required|allow_letter',
 	            'department' => 'required',
-	            'checkcode' => 'required|captcha'
+	            'checkcode' => 'required|captcha',
+	            'usertype' => 'required|integer'
 	        ], [
 	            'uname.required' => '请输入姓名',
 	            'schoolnum.required' => '请输入学号',
 	            'schoolnum.allow_letter' => '请输入规范的学号',
 	            'department.required' => '请输入院系',
 	            'checkcode.required' => '请输入验证码',
-	            'checkcode.captcha' => '验证码输入错误，请重新输入'
+	            'checkcode.captcha' => '验证码输入错误，请重新输入',
+	            'usertype.required' => '请选择您的身份',
+	            'usertype.integer' => '您选择的身份类型不存在'
 	        ]);
 		}
 

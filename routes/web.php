@@ -23,7 +23,7 @@ Route::middleware('login')->group(function(){
 	Route::get('/home/{name?}','web\Home@doIndex');
 	Route::post('/home/add','web\Home@doAdd');
 
-	Route::get('/score/{name?}','web\Score@index');
+	//Route::get('/score/{name?}','web\Score@index');
 
 	Route::get('/setting','web\Setting@index');
 	Route::post('/setting/count','web\Setting@postCount');

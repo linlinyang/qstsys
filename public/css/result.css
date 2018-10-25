@@ -52,8 +52,13 @@ body {
   bottom: 0;
   position: fixed;
   z-index: 99999; }
+  .save-btn.disabled {
+    background: rgba(159, 159, 159, 0.9);
+    cursor: default; }
   .save-btn:hover {
     background: #349734; }
+  .save-btn.disabled:hover {
+    background: rgba(159, 159, 159, 0.9); }
 
 .result {
   position: fixed;

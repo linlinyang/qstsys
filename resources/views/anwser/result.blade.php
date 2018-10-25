@@ -71,8 +71,17 @@
 
 </div>
 
-<div class="save-btn">
-	<span>保存试卷</span>
+<div class="
+save-btn 
+@if($info->score < 90)
+disabled
+@endif
+">
+	@if($info->score < 90)
+		<span>答对90分才能下载试卷</span>
+	@else
+		<span>保存试卷</span>
+	@endif
 </div>
 
 <!-- 
@@ -102,7 +111,9 @@
 		}).then(function(canvas){
 			var img = Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height);
 			$(".save-btn").click(function(){
-
+				if($(this).hasClass('disabled')){
+					return ;
+				}
 				saveImg(img.src,'考试结果.png');
 
 			});

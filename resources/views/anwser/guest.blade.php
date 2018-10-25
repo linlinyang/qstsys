@@ -40,6 +40,19 @@
 					</div>
 					<input type="text" name="department" class="form-control" placeholder="院系" value="{{ old('department') }}">
 				</fieldset>
+				<fieldset class="form-group">
+					<div class="icon iconfont">
+						<i class="icon-quanxianshenpi"></i>
+					</div>
+					<div class="control-box">
+						<label class="radio-box">
+							<input type="radio" name="usertype" value="1" checked='true'>学生
+						</label>
+						<label class="radio-box">
+							<input type="radio" name="usertype" value="2">老师
+						</label>
+					</div>
+				</fieldset>
 				<fieldset class="form-group clear">
 					<input type="text" name="checkcode" class="form-control checkcode" placeholder="请输入验证码" value="">
 					<div class="imgcode">

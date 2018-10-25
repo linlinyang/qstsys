@@ -117,8 +117,16 @@ body{
 	@include pos(null,0,fixed,null,0);
 	z-index: 99999;
 
+	&.disabled{
+		background: rgba(159,159,159,0.9);
+		cursor: default;
+	}
+
 	&:hover{
 		background: #349734;
+	}
+	&.disabled:hover{
+		background: rgba(159,159,159,0.9);
 	}
 }
 

@@ -78,7 +78,8 @@ class Anwser extends Authenticatable
     		'schoolnum' => $request->schoolnum,
     		'department' => $request->department,
     		'starttime' => time(),
-    		'questions' => implode(',',$rdQids)
+    		'questions' => implode(',',$rdQids),
+            'usertype' => $request->usertype
     	];
 
     	return DB::table('qst_question_guest')

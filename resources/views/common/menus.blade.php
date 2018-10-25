@@ -7,11 +7,11 @@
 		<i class="icon-right iconfont"></i>
 	</a>
 
-	<a href="{{ url('score') }}" class="item {{ $tabIndex === 'score' ? 'active' : '' }}">
-		<i class="icon-tiaoshi iconfont"></i>
-		<span>答题管理</span>
-		<i class="icon-right iconfont"></i>
-	</a>
+<!-- 	<a href="{{ url('score') }}" class="item {{ $tabIndex === 'score' ? 'active' : '' }}">
+	<i class="icon-tiaoshi iconfont"></i>
+	<span>答题管理</span>
+	<i class="icon-right iconfont"></i>
+</a> -->
 
 	<a href="{{ url('setting') }}" class="item {{ $tabIndex === 'setting' ? 'active' : '' }}">
 		<i class="icon-setting iconfont"></i>

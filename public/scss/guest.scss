@@ -64,7 +64,8 @@ body{
 	background: #f6f6f6;
 }
 input,textarea,button{
-	appearance: none;
+	-moz-appearance: none;
+	     appearance: none;
 	-webkit-appearance: none;
 }
 
@@ -85,7 +86,8 @@ input,textarea,button{
 	.login{
 		@include hAlign(460px,60px);
 		border-radius: 2px;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+		        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
 		.login-header{
 			padding: 30px 0;
@@ -152,10 +154,11 @@ input,textarea,button{
 					border-right: 1px solid rgba(0,0,0,0.14);
 				}
 
-				.form-control{
+				.form-control,.control-box{
 					display: block;
 					@include size(100%,40px);
-					box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+					        box-sizing: border-box;
 					padding: 8px 18px 8px 50px;
 					border-radius: 3px;
 					line-height: 40px;
@@ -163,7 +166,7 @@ input,textarea,button{
 					background: #fff;
 					margin: 0;
 					outline: none;
-					@include fcw(#333,14px);
+					@include fcw(14px,#333);
 
 					&:focus{
 						border-color: #2a94db;
@@ -172,6 +175,21 @@ input,textarea,button{
 						width: 60%;
 						padding: 8px 18px;
 						float: left;
+					}
+				}
+				.control-box{
+					line-height: 24px;
+					@include fcw(14px,#333);
+					.radio-box{
+						margin-right: 10px;
+						vertical-align: middle;
+						input[type=radio]{
+							vertical-align: middle;
+							margin-right: 4px;
+							-webkit-appearance: radio;
+							   -moz-appearance: radio;
+							        appearance: radio;
+						}
 					}
 				}
 				.imgcode{
@@ -183,7 +201,8 @@ input,textarea,button{
 
 			}
 			.submit{
-				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				        box-sizing: border-box;
 				@include size(100%,40px);
 				line-height: 40px;
 				display: block;
@@ -215,7 +234,8 @@ input,textarea,button{
 	.message{
 		@extend .login;
 		.icon{
-			box-shadow: 0 4px 6px #fcce76;
+			-webkit-box-shadow: 0 4px 6px #fcce76;
+			        box-shadow: 0 4px 6px #fcce76;
 		}
 
 		.content{
@@ -261,7 +281,8 @@ input,textarea,button{
 
 		.login{
 			@include hAlign(100%,0);
-			box-shadow: none;
+			-webkit-box-shadow: none;
+			        box-shadow: none;
 
 			.login-footer{
 				text-align: center;
