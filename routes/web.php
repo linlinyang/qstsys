@@ -29,6 +29,16 @@ Route::middleware('login')->group(function(){
 	Route::post('/setting/count','web\Setting@postCount');
 	Route::post('/setting/other','web\Setting@postOther');
 
+	Route::get('/college','web\College@index');
+	Route::get('/college/add',function(){
+		return view('college/index')
+    			->with('_name','insert');
+	});
+	Route::post('/college/add','web\College@insert');
+	Route::get('/college/detail','web\College@detail');
+	Route::post('/college/detail','web\College@detailUpdate');
+	Route::get('/college/delete','web\College@delete');
+
 });
 
 Route::get('/imgcode','web\Anwser@getVerifyCode');

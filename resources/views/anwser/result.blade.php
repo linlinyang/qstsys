@@ -78,14 +78,13 @@ disabled
 @endif
 ">
 	@if($info->score < 90)
-		<span>答对90分才能下载试卷</span>
+		<span>答对90分才能打印成绩单</span>
 	@else
-		<span>保存试卷</span>
+		<span>打印成绩单</span>
 	@endif
 </div>
 
-<!-- 
-<div class="result"></div> -->
+<a href="{{ url('/') }}" class="again">返回重新考试</a>
 
 <script type="text/javascript" src="{{ URL::asset('public/js/html2canvas.js') }}"></script>
 <script type="text/javascript" src="{{ url('public/js/canvas2image.js') }}"></script>

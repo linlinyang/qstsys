@@ -193,4 +193,10 @@ class Anwser extends Authenticatable
         return 100 / self::getTotalNum();
     }
 
+    public static function getColleges(){
+        return DB::table('qst_question_college')
+                ->where('is_deleted','=',0)
+                ->get();
+    }
+
 }

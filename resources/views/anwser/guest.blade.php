@@ -32,13 +32,18 @@
 					<div class="icon iconfont">
 						<i class="icon-idcard"></i>
 					</div>
-					<input type="text" name="schoolnum" class="form-control" placeholder="学号" value="{{ old('schoolnum') }}">
+					<input type="text" name="schoolnum" class="form-control" placeholder="学号/工号" value="{{ old('schoolnum') }}">
 				</fieldset>
 				<fieldset class="form-group">
 					<div class="icon iconfont">
 						<i class="icon-block"></i>
 					</div>
-					<input type="text" name="department" class="form-control" placeholder="院系" value="{{ old('department') }}">
+					<!-- <input type="text" name="department" class="form-control" placeholder="院系" value="{{ old('department') }}"> -->
+					<select name="department" class="form-control">
+						@foreach ($colleges as $col)
+						<option value="{{ $col->id }}">{{ $col->name }}</option>
+						@endforeach
+					</select>
 				</fieldset>
 				<fieldset class="form-group">
 					<div class="icon iconfont">

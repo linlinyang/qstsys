@@ -47,7 +47,8 @@
 		}
 
 		public function guest(){
-			return view('anwser/guest');
+			$colleges = AswData::getColleges();
+			return view('anwser/guest',compact('colleges'));
 		}
 
 		public function guestLogin(Request $request){

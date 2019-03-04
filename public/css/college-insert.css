@@ -1,0 +1,73 @@
+.form {
+  padding: 15px 0;
+  position: relative;
+  overflow: hidden;
+  display: block; }
+  .form .form-group {
+    margin-bottom: 15px; }
+    .form .form-group .label {
+      font-size: 14px;
+      color: #333;
+      font-weight: bolder;
+      margin-bottom: 5px;
+      display: block; }
+    .form .form-group .fill {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 5px;
+      margin-left: 14px; }
+      .form .form-group .fill:after {
+        content: '';
+        clear: both; }
+      .form .form-group .fill > .iconfont {
+        font-size: 22px;
+        color: #c78741;
+        font-weight: normal;
+        vertical-align: middle; }
+    .form .form-group .form-control {
+      display: inline-block;
+      vertical-align: middle;
+      width: 360px; }
+  .form .submit {
+    width: 86px;
+    height: 32px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal; }
+  .form .require {
+    color: red; }
+
+.nav-tabs {
+  position: relative;
+  overflow: hidden;
+  z-index: 1; }
+  .nav-tabs > .item {
+    z-index: 10;
+    float: left;
+    margin-right: 6px; }
+    .nav-tabs > .item > a {
+      z-index: 10;
+      font-size: 14px;
+      color: #444;
+      font-weight: normal;
+      padding: 6px 20px;
+      background: #fafafa;
+      display: block;
+      border-bottom: 2px solid #eee;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
+    .nav-tabs > .item.active a {
+      background: #42b48d;
+      border-color: #42b48d;
+      color: #fff; }
+  .nav-tabs:after {
+    z-index: 2;
+    content: '';
+    width: 100%;
+    height: 2px;
+    float: left;
+    margin-top: -2px;
+    background: #eee;
+    position: relative; }
+
+/*# sourceMappingURL=college-insert.css.map */

@@ -1,0 +1,149 @@
+@mixin size(
+	$width: 100%,
+	$height: auto
+){
+	width: $width;
+	height: $height
+}
+
+@mixin backImg(
+	$src,
+	$pos: center top,
+	$size: auto,
+	$repeat: no-repeat
+){
+	background: url($src) $repeat $pos;
+	background-size: $size
+}
+
+@mixin hAlign(
+	$width,
+	$top: 0,
+	$bottom: 0
+){
+	width: $width;
+	margin: $top auto $bottom
+}
+
+@mixin pos(
+	$top: 0,
+	$left: 0,
+	$position: absolute,
+	$right: null,
+	$bottom: null
+){
+	@if $top{
+		top: $top
+	}
+	@if $left{
+		left: $left
+	}
+	@if $right{
+		right: $right
+	}
+	@if $bottom{
+		bottom: $bottom
+	}
+	position: $position
+}
+@mixin fcw(
+	$size: 14px,
+	$color: #333,
+	$weight: normal
+){
+	font-size: $size;
+	color: $color;
+	font-weight: $weight
+}
+
+
+.form{
+	padding: 15px 0;
+	position: relative;
+	overflow: hidden;
+	display: block;
+
+	.form-group{
+		margin-bottom: 15px;
+
+		.label{
+			@include fcw(14px,#333,bolder);
+			margin-bottom: 5px;
+			display: block;
+		}
+		.fill{
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 5px;
+			margin-left: 14px;
+
+			&:after{
+				content: '';
+				clear: both;
+			}
+
+			&>.iconfont{
+				@include fcw(22px,#c78741);
+				vertical-align: middle;
+			}
+
+		}
+
+		.form-control{
+			display: inline-block;
+			vertical-align: middle;
+			width: 360px;
+		}
+
+	}
+
+	.submit{
+		@include size(86px,32px);
+		@include fcw(14px,#fff)
+	}
+
+	.require{
+		color: red;
+	}
+}
+
+
+.nav-tabs{
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+
+	& > .item{
+		z-index: 10;
+		float: left;
+		margin-right: 6px;
+
+		& > a{
+			z-index: 10;
+			@include fcw(14px,#444);
+			padding: 6px 20px;
+			background: #fafafa;
+			display: block;
+			border-bottom: 2px solid #eee;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+		}
+		&.active{
+			a{
+				background: #42b48d;
+				border-color: #42b48d;
+				color: #fff;
+			}
+		}
+	}
+
+	&:after{
+		z-index: 2;
+		content: '';
+		@include size(100%,2px);
+		float: left;
+		margin-top: -2px;
+		background: #eee;
+		position: relative;
+	}
+}
