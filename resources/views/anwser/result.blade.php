@@ -93,7 +93,7 @@ disabled
 
 		var $main = $(".main"),
 			width = $main.width(),
-			height = $main.height(),
+			height = width * 29 / 21,//$main.height(),
 			canvas = document.createElement('canvas'),
 			scale = 2;
 
